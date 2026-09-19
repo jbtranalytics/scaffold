@@ -25,6 +25,6 @@ cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/uv.lock" "$DEST_DIR/uv.l
 
 
 # Copy and overwrite the Dockerfile.public
-cp -f "$SRC_DIR/Dockerfile.public" "$DEST_DIR/Dockerfile.public"
+cp -f "$SRC_DIR/Dockerfile.public" "$DEST_DIR/images/Dockerfile.public"
 
 echo "✅ Dockerfiles and related files have been copied to $DEST_DIR"
