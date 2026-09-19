@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-sanity:
+    name: Python Quality & Types
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install proto
+        uses: moonrepo/setup-proto@v2
+        with:
+          version: latest
+
+      - name: Setup tools with proto
+        run: proto use
+
+      - name: Install Python dependencies
+        run: |
+          uv sync --all-groups
+
+      - name: Ruff Check
+        run: uv run ruff check .
+
+      - name: Ruff Format Check
+        run: uv run ruff format --check .
+
+      - name: Pyright Typecheck
+        run: uv run pyright
+
+  web-sanity:
+    name: Web Frontend Quality & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 26
+        uses: actions/setup-node@v4
+        with:
+          node-version: 26
+
+      - name: Install Web Dependencies
+        run: npm --prefix apps/web ci
+
+      - name: Lint Web App
+        run: npm --prefix apps/web run lint
+
+      - name: Build Web App
+        run: npm --prefix apps/web run build
+
+  pre-commit:
+    name: Pre-commit Hooks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install proto
+        uses: moonrepo/setup-proto@v2
+        with:
+          version: latest
+
+      - name: Setup tools with proto
+        run: proto use
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Run Pre-commit
+        run: uv run pre-commit run --all-files

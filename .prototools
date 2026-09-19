@@ -1,0 +1,6 @@
+# Proto toolchain configuration
+# https://moonrepo.dev/proto
+
+node = "26"
+python = "3.14"
+uv = "latest"

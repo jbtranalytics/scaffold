@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "charliermarsh.ruff",
+    "ms-pyright.pyright",
+    "skellock.just",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "tamasfe.even-better-toml",
+    "mikestead.dotenv",
+    "timonwong.shellcheck"
+  ]
+}

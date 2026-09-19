@@ -1,0 +1,1 @@
+"""Base stores layer root."""

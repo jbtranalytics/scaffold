@@ -1,0 +1,116 @@
+[project]
+name = "packages"
+version = "0.1.0"
+description = "Shared core and protocols packages for scaffold monorepo"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ag-ui-protocol>=1.0.0",
+    "argon2-cffi>=25.1.0",
+    "cryptography>=50.0.1",
+    "fastapi>=0.141.1",
+    "gunicorn>=26.2.0",
+    "httpx>=0.28.1",
+    "langchain>=1.4.2",
+    "langchain-mcp-adapters>=0.3.2",
+    "langgraph>=1.2.11",
+    "langgraph-checkpoint>=4.2.0",
+    "openai>=3.16.2",
+    "postgres>=4.0",
+    "psycopg-pool>=3.3.2",
+    "psycopg[binary]>=3.2",
+    "pydantic-settings>=2.15.0",
+    "sqlmodel>=0.0.42",
+    "supabase>=2.31.0",
+    "uvicorn>=0.53.0",
+    "valkey>=6.1.1",
+]
+
+[project.scripts]
+scaffold = "packages:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+    "pyright>=1.1.408",
+    "ruff>=0.16.8",
+]
+
+[tool.uv.build-backend]
+module-root = ""
+
+# ------------------------------------------------------------------------------
+# Ruff Configuration (Python 3.14 standards)
+# ------------------------------------------------------------------------------
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+indent-width = 4
+exclude = [
+    ".git",
+    ".venv",
+    ".cache",
+    ".next",
+    "out",
+    "node_modules",
+    "dist",
+    "build",
+    "__pycache__",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "UP",     # pyupgrade (modern Python 3.14 constructs)
+    "SIM",    # flake8-simplify
+    "TC",     # flake8-type-checking
+    "RUF",    # Ruff-specific rules
+]
+ignore = [
+    "E501",   # line length violations (handled by formatter)
+]
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["packages", "apps"]
+combine-as-imports = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+# ------------------------------------------------------------------------------
+# Pyright Type Checker Configuration (Python 3.14 standards)
+# ------------------------------------------------------------------------------
+[tool.pyright]
+pythonVersion = "3.14"
+pythonPlatform = "Linux"
+typeCheckingMode = "standard"
+include = [
+    "packages",
+    "apps/api",
+    "smoke",
+]
+exclude = [
+    "**/__pycache__",
+    ".venv",
+    ".cache",
+    "apps/web",
+    "node_modules",
+]
+reportMissingImports = true
+reportMissingTypeStubs = false
+reportUnusedImport = false # handled by ruff
+reportUnusedVariable = false # handled by ruff

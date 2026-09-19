@@ -1,0 +1,29 @@
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file, UTF-8 charset
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# Web frontend & configuration formats (JSON, YAML, TOML, Markdown)
+[*.{js,jsx,ts,tsx,mjs,cjs,json,yaml,yml,css,scss,html}]
+indent_size = 2
+
+[*.toml]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{sh,bash,zsh}]
+indent_size = 4
+
+# Makefiles and Justfiles
+[{Makefile,Justfile,*.just,*.mk}]
+indent_style = space
+indent_size = 4
