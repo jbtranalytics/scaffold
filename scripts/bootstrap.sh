@@ -508,7 +508,19 @@ fi
 EOF
     chmod +x "$HOME/.local/bin/xdg-open"
 
-    log_info "Installed ~/.local/bin/ag and ~/.local/bin/xdg-open"
+    # 3. Ollama CLI binary (~/.local/bin/ollama)
+    if ! command -v ollama >/dev/null 2>&1 && [[ ! -f "$HOME/.local/bin/ollama" ]]; then
+        log_info "Downloading Ollama Linux CLI binary to ~/.local/bin/ollama..."
+        local latest_tag
+        latest_tag=$(curl -sI https://github.com/ollama/ollama/releases/latest | grep -i "^location:" | sed -E 's/.*tag\/(v[0-9.]+).*/\1/' | tr -d '\r')
+        latest_tag="${latest_tag:-v0.34.2}"
+        curl -L "https://github.com/ollama/ollama/releases/download/${latest_tag}/ollama-linux-amd64.tar.zst" | tar --zstd -x -C "$HOME/.local/bin" bin/ollama --strip-components=1 2>/dev/null || true
+        chmod +x "$HOME/.local/bin/ollama" 2>/dev/null || true
+    else
+        log_info "Ollama CLI is already installed."
+    fi
+
+    log_info "Installed ~/.local/bin/ag, ~/.local/bin/xdg-open, and ~/.local/bin/ollama"
 }
 
 # ------------------------------------------------------------------------------
@@ -701,6 +713,11 @@ alias antigravity="ag"
 
 # Jump to workspace only if shell starts in home directory
 [[ "$PWD" == "$HOME" && -f ~/scripts/workspace.sh ]] && source ~/scripts/workspace.sh
+
+# Ollama & Claude Code Integration (Dynamic WSL Host IP)
+export OLLAMA_HOST="http://\$(ip route show default | awk '{print \$3}'):11434"
+export ANTHROPIC_BASE_URL="\${OLLAMA_HOST}/v1"
+export ANTHROPIC_API_KEY="ollama"
 
 # Starship prompt (keep at the very end of .zshrc)
 if (( $+commands[starship] )); then

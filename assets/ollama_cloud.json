@@ -1,0 +1,612 @@
+{
+    "models": [
+        {
+            "name": "qwen3.5:cloud",
+            "model": "qwen3.5:cloud",
+            "remote_model": "qwen3.5:397b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:06.0886937-07:00",
+            "size": 315,
+            "digest": "68d2a0796c11e1fedd0456a2d55e58cca4077be6a218428a7a7f4e21f8177cbc",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "397B",
+                "quantization_level": "BF16",
+                "context_length": 262144,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools",
+                "vision"
+            ]
+        },
+        {
+            "name": "nemotron-3-ultra:cloud",
+            "model": "nemotron-3-ultra:cloud",
+            "remote_model": "nemotron-3-ultra",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:05.4181284-07:00",
+            "size": 310,
+            "digest": "fc1664751465a5e51617ff404f0f9be8fd89aef8d8ce9dc32599a26e239dc100",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "550B",
+                "quantization_level": "",
+                "context_length": 262144,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools"
+            ]
+        },
+        {
+            "name": "nemotron-3-super:cloud",
+            "model": "nemotron-3-super:cloud",
+            "remote_model": "nemotron-3-super",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:05.1031689-07:00",
+            "size": 315,
+            "digest": "c6398e09afd407f9988333b6e48629c0afb143c1116f5f79e877552b68a684e4",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "120B",
+                "quantization_level": "NVFP4",
+                "context_length": 262144,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools"
+            ]
+        },
+        {
+            "name": "qwen3.5:397b-cloud",
+            "model": "qwen3.5:397b-cloud",
+            "remote_model": "qwen3.5:397b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:05.7254615-07:00",
+            "size": 315,
+            "digest": "68d2a0796c11e1fedd0456a2d55e58cca4077be6a218428a7a7f4e21f8177cbc",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "397B",
+                "quantization_level": "BF16",
+                "context_length": 262144,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools",
+                "vision"
+            ]
+        },
+        {
+            "name": "minimax-m3:cloud",
+            "model": "minimax-m3:cloud",
+            "remote_model": "minimax-m3",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:04.1799781-07:00",
+            "size": 301,
+            "digest": "6f927c9f5b085dba16863af475db4a6b34497be28b074b59d8906f91b38582db",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "0",
+                "quantization_level": "",
+                "context_length": 512000
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking",
+                "vision"
+            ]
+        },
+        {
+            "name": "mistral-large-3:675b-cloud",
+            "model": "mistral-large-3:675b-cloud",
+            "remote_model": "mistral-large-3:675b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:04.4811181-07:00",
+            "size": 319,
+            "digest": "951502e79e7f517bb49c298b597959501406b965420feacfa9ccfbce2e40d35c",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "675B",
+                "quantization_level": "FP8",
+                "context_length": 262144,
+                "embedding_length": 7168
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "vision"
+            ]
+        },
+        {
+            "name": "nemotron-3-nano:30b-cloud",
+            "model": "nemotron-3-nano:30b-cloud",
+            "remote_model": "nemotron-3-nano:30b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:04.7932898-07:00",
+            "size": 318,
+            "digest": "2fd759a2eb63dff9954a5dffd635ed4d4fee18a5734f1117ea5bfbbf201729d1",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "32B",
+                "quantization_level": "FP8",
+                "context_length": 262144,
+                "embedding_length": 2880
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "kimi-k2.7-code:cloud",
+            "model": "kimi-k2.7-code:cloud",
+            "remote_model": "kimi-k2.7-code",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:03.2410233-07:00",
+            "size": 320,
+            "digest": "e30d96cd393660995bd710d190440b53388b753086b9c2cf8fd098d16a567def",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "1.04T",
+                "quantization_level": "INT4",
+                "context_length": 262144,
+                "embedding_length": 2048
+            },
+            "capabilities": [
+                "vision",
+                "thinking",
+                "completion",
+                "tools"
+            ]
+        },
+        {
+            "name": "minimax-m2.7:cloud",
+            "model": "minimax-m2.7:cloud",
+            "remote_model": "minimax-m2.7",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:03.8563717-07:00",
+            "size": 302,
+            "digest": "709d8858c35ebed0532b37308801ff9b64d3df2c0aab54367e7d2baa70136206",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "229B",
+                "quantization_level": "",
+                "context_length": 196608,
+                "embedding_length": 3072
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "kimi-k3:cloud",
+            "model": "kimi-k3:cloud",
+            "remote_model": "kimi-k3",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:03.5505669-07:00",
+            "size": 308,
+            "digest": "630e737485bd19f7244fa91f135be116780a25e942ceed0d2aceabaccbd5bf99",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "2.81T",
+                "quantization_level": "MXFP4",
+                "context_length": 1048576,
+                "embedding_length": 7168
+            },
+            "capabilities": [
+                "vision",
+                "thinking",
+                "completion",
+                "tools"
+            ]
+        },
+        {
+            "name": "kimi-k2.6:cloud",
+            "model": "kimi-k2.6:cloud",
+            "remote_model": "kimi-k2.6",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:02.7398443-07:00",
+            "size": 310,
+            "digest": "0d3854574c71904ea116a2de680f0d35d4bad047a5503b6eeb0601679c2c15c3",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "1.04T",
+                "quantization_level": "INT4",
+                "context_length": 262144,
+                "embedding_length": 2048
+            },
+            "capabilities": [
+                "vision",
+                "thinking",
+                "completion",
+                "tools"
+            ]
+        },
+        {
+            "name": "gpt-oss:120b-cloud",
+            "model": "gpt-oss:120b-cloud",
+            "remote_model": "gpt-oss:120b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:02.0910579-07:00",
+            "size": 307,
+            "digest": "ac7f7a1e778577c4418f6a25e46e0b45dced6746c75422d4b343aa1495a022ed",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "117B",
+                "quantization_level": "MXFP4",
+                "context_length": 131072,
+                "embedding_length": 2880
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "gpt-oss:20b-cloud",
+            "model": "gpt-oss:20b-cloud",
+            "remote_model": "gpt-oss:20b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:02.418547-07:00",
+            "size": 306,
+            "digest": "9a01793d9ef8de5309f157c06dbcbadfb598001b4a6f13cbc699cdff5042eaae",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "20.9B",
+                "quantization_level": "MXFP4",
+                "context_length": 131072,
+                "embedding_length": 2880
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "glm-5.3-flash:cloud",
+            "model": "glm-5.3-flash:cloud",
+            "remote_model": "glm-5.3-flash",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:01.7783404-07:00",
+            "size": 317,
+            "digest": "3e780905abc0e7240dd1489935ec1e3c7fcf1854a6f4e7f8688f9bb0bdacb1a5",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "321B",
+                "quantization_level": "FP8",
+                "context_length": 1048576,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools",
+                "vision"
+            ]
+        },
+        {
+            "name": "glm-5.2:cloud",
+            "model": "glm-5.2:cloud",
+            "remote_model": "glm-5.2",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:01.155018-07:00",
+            "size": 290,
+            "digest": "09d3ded00dd7a4e6ab5a8869ce39a947e721cb111399ec1f5dc474d16ef541c1",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "756B",
+                "quantization_level": "",
+                "context_length": 1048576
+            },
+            "capabilities": [
+                "thinking",
+                "completion",
+                "tools"
+            ]
+        },
+        {
+            "name": "glm-5.3:cloud",
+            "model": "glm-5.3:cloud",
+            "remote_model": "glm-5.3",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:01.466106-07:00",
+            "size": 293,
+            "digest": "8477dab3e25bb0f93c468af220186f55394262ee5e9f39262af4b60b54a8c4ba",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "753B",
+                "quantization_level": "FP8",
+                "context_length": 1048576
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools"
+            ]
+        },
+        {
+            "name": "gemma4:cloud",
+            "model": "gemma4:cloud",
+            "remote_model": "gemma4:31b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:00.439974-07:00",
+            "size": 312,
+            "digest": "ef09f235533c96cd75e8deed88c628335cb69e2b3ce96275d0d7a67fe9887aba",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "32.7B",
+                "quantization_level": "BF16",
+                "context_length": 262144,
+                "embedding_length": 5376
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools",
+                "vision"
+            ]
+        },
+        {
+            "name": "gemma4:31b-cloud",
+            "model": "gemma4:31b-cloud",
+            "remote_model": "gemma4:31b",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:00.1282478-07:00",
+            "size": 312,
+            "digest": "ef09f235533c96cd75e8deed88c628335cb69e2b3ce96275d0d7a67fe9887aba",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "32.7B",
+                "quantization_level": "BF16",
+                "context_length": 262144,
+                "embedding_length": 5376
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools",
+                "vision"
+            ]
+        },
+        {
+            "name": "glm-5.1:cloud",
+            "model": "glm-5.1:cloud",
+            "remote_model": "glm-5.1",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:17:00.8539323-07:00",
+            "size": 295,
+            "digest": "7aea7667808a4aed9488836bd4b2800a57287faf6273f436c8b5fbbe65a441c1",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "756B",
+                "quantization_level": "FP8",
+                "context_length": 202752,
+                "embedding_length": 6144
+            },
+            "capabilities": [
+                "thinking",
+                "completion",
+                "tools"
+            ]
+        },
+        {
+            "name": "deepseek-v4-pro:cloud",
+            "model": "deepseek-v4-pro:cloud",
+            "remote_model": "deepseek-v4-pro:0813",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:16:59.3086104-07:00",
+            "size": 323,
+            "digest": "47d1ad2bea02fdccfcd32868838fe2d3e7eb9d07529ae80ed0cb00e248879678",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "1.65T",
+                "quantization_level": "FP8",
+                "context_length": 1048576,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "devstral-small-2:24b-cloud",
+            "model": "devstral-small-2:24b-cloud",
+            "remote_model": "devstral-small-2:24b",
+            "remote_host": "https://ollama.com:443",
+            "modified_at": "2026-09-19T16:16:59.7655858-07:00",
+            "size": 405,
+            "digest": "ec4a591da58a566423941143871ae064fa340786af99c9e189b6f3a7e9c4410c",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "mistral3",
+                "families": [
+                    "mistral3"
+                ],
+                "parameter_size": "24000000000",
+                "quantization_level": "fp8",
+                "context_length": 262144,
+                "embedding_length": 3072
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "vision"
+            ]
+        },
+        {
+            "name": "deepseek-v4-pro:0813-cloud",
+            "model": "deepseek-v4-pro:0813-cloud",
+            "remote_model": "deepseek-v4-pro:0813",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:16:58.9936769-07:00",
+            "size": 323,
+            "digest": "47d1ad2bea02fdccfcd32868838fe2d3e7eb9d07529ae80ed0cb00e248879678",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "1.65T",
+                "quantization_level": "FP8",
+                "context_length": 1048576,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "deepseek-v4-flash:cloud",
+            "model": "deepseek-v4-flash:cloud",
+            "remote_model": "deepseek-v4-flash:0731",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:16:58.6835713-07:00",
+            "size": 326,
+            "digest": "d3f1c87447216481a8001f48c517a51e13bfb141853a8df5e52f81bf765dabc3",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "304B",
+                "quantization_level": "FP8",
+                "context_length": 1048576,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "deepseek-v4-flash:0731-cloud",
+            "model": "deepseek-v4-flash:0731-cloud",
+            "remote_model": "deepseek-v4-flash:0731",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:16:58.2724519-07:00",
+            "size": 326,
+            "digest": "d3f1c87447216481a8001f48c517a51e13bfb141853a8df5e52f81bf765dabc3",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "304B",
+                "quantization_level": "FP8",
+                "context_length": 1048576,
+                "embedding_length": 4096
+            },
+            "capabilities": [
+                "completion",
+                "tools",
+                "thinking"
+            ]
+        },
+        {
+            "name": "deepseek-v4.1-flash:cloud",
+            "model": "deepseek-v4.1-flash:cloud",
+            "remote_model": "deepseek-v4.1-flash",
+            "remote_host": "https://ollama.com",
+            "modified_at": "2026-09-19T16:16:57.9723927-07:00",
+            "size": 326,
+            "digest": "e04da138d31e0c9468e982e1ae9503d06cb7e170caa16a90c17d931c4aa140f8",
+            "details": {
+                "parent_model": "",
+                "format": "",
+                "family": "",
+                "families": null,
+                "parameter_size": "763B",
+                "quantization_level": "FP8",
+                "context_length": 1048576
+            },
+            "capabilities": [
+                "completion",
+                "thinking",
+                "tools",
+                "vision"
+            ]
+        }
+    ]
+}

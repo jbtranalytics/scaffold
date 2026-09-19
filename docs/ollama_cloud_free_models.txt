@@ -1,0 +1,29 @@
+Ollama Free Cloud Models List & Verification Report
+Date: 2026-09-19
+
+Available Free Cloud Models (*-cloud):
+--------------------------------------------------------------------------------
+1. gpt-oss:20b-cloud
+   - Parameter Size: 20.9B
+   - Quantization: MXFP4
+   - Context Length: 131,072
+   - Capabilities: completion, tools, thinking
+   - Test Status: PASSED (Verified via 'ollama run gpt-oss:20b-cloud "hi"')
+
+2. gpt-oss:120b-cloud
+   - Parameter Size: 117B
+   - Quantization: MXFP4
+   - Context Length: 131,072
+   - Capabilities: completion, tools, thinking
+   - Test Status: PASSED (Verified via 'ollama run gpt-oss:120b-cloud "hi"')
+
+3. gemma4:31b-cloud
+   - Parameter Size: 32.7B
+   - Quantization: BF16
+   - Context Length: 262,144
+   - Capabilities: completion, thinking, tools, vision
+   - Test Status: PASSED (Verified via 'ollama run gemma4:31b-cloud "hi"')
+
+Summary:
+--------------------------------------------------------------------------------
+All 3 active Ollama Cloud free models were pulled, tested with new prompts, and confirmed working cleanly over the Windows-WSL bridge.
