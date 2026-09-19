@@ -2,6 +2,10 @@
 # Public base image containing all Python dependencies (via uv).
 # This image is intended to be published publicly (e.g. to ghcr.io) and can be used as the base for a private image that only adds your source code.
 
+# Dockerfile.public
+# Public base image containing all Python dependencies (via uv) and Node.js 26.
+# This image is intended to be published publicly (e.g. to ghcr.io) and can be used as the base for a private image that only adds your source code.
+
 FROM python:3.14-slim AS base
 
 # Install OS build tools required by many Python wheels (adjust as needed).
@@ -20,6 +24,17 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
     ln -s ${UV_INSTALL_DIR}/bin/uv /usr/local/bin/uv
 
 WORKDIR /app
+
+# Install Node.js 26 (via NodeSource)
+RUN curl -fsSL https://deb.nodesource.com/setup_26.x | bash - && \
+    apt-get install -y --no-install-recommends nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy the package.json for the web app (used for npm install)
+COPY apps/web/package.json ./apps/web/package.json
+
+# Install Node dependencies (including dev) using npm ci
+RUN npm ci --prefix apps/web
 
 # Copy only the pyproject and lock files to leverage Docker layer caching.
 COPY pyproject.toml uv.lock ./

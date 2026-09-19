@@ -14,6 +14,11 @@ if [[ ! -d "$DEST_DIR" ]]; then
   exit 1
 fi
 
+# Ensure destination subdirectory exists for the web package.json
+mkdir -p "$DEST_DIR/apps/web"
+# Copy package.json (public dependency manifest) – it will be used by the public Docker image to install node modules
+cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/../apps/web" && pwd)/package.json" "$DEST_DIR/apps/web/package.json"
+
 # Copy and overwrite the Dockerfiles.
 cp -f "$SRC_DIR/Dockerfile.public" "$DEST_DIR/Dockerfile.public"
 # cp -f "$SRC_DIR/Dockerfile.private" "$DEST_DIR/Dockerfile.private"  # private Dockerfile not copied to public repo
