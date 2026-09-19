@@ -1,9 +1,9 @@
 # Dockerfile.private
-# Private image that layers your application code on top of the public base image.
-# It assumes the public base image has already been built and is available (e.g. ghcr.io/<owner>/my-public-image:latest).
+# Private image that layers your application code on top of the public base (base-public) image.
+# It assumes the public base image has already been built and is available (e.g. ghcr.io/<owner>/base-public:latest).
 
 # The base image can be overridden at build time:
-ARG BASE_IMAGE=ghcr.io/<owner>/my-public-image:latest
+ARG BASE_IMAGE=ghcr.io/<owner>/base-public:latest
 FROM ${BASE_IMAGE} AS base
 
 WORKDIR /app
