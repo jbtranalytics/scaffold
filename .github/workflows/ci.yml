@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install proto
-        uses: moonrepo/setup-proto@v2
+        uses: moonrepo/setup-proto@v1
         with:
           version: latest
 
@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install proto
-        uses: moonrepo/setup-proto@v2
+        uses: moonrepo/setup-proto@v1
         with:
           version: latest
 
