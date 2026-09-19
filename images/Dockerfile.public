@@ -9,14 +9,22 @@
 FROM python:3.14-slim AS base
 
 # Install OS build tools required by many Python wheels (adjust as needed).
+# Install OS build tools and runtime dependencies required by the Scaffold monorepo (Python & Node)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         build-essential \
         gcc \
         libffi-dev \
         libssl-dev \
-        ca-certificates && \
-    rm -rf /var/lib/apt/lists/*
+        ca-certificates \
+        # Version control tools – needed for git‑based Python deps
+        git \
+        openssh-client \
+        # PostgreSQL client libraries (runtime for psycopg) and dev headers for building wheels
+        postgresql-client libpq-dev \
+        # Sodium library for argon2‑cffi
+        libsodium-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install uv (the Python package manager)
 ENV UV_INSTALL_DIR=/usr/local
