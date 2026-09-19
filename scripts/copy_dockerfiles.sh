@@ -19,8 +19,12 @@ mkdir -p "$DEST_DIR/apps/web"
 # Copy package.json (public dependency manifest) – it will be used by the public Docker image to install node modules
 cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/../apps/web" && pwd)/package.json" "$DEST_DIR/apps/web/package.json"
 
-# Copy and overwrite the Dockerfiles.
-cp -f "$SRC_DIR/Dockerfile.public" "$DEST_DIR/Dockerfile.public"
-# cp -f "$SRC_DIR/Dockerfile.private" "$DEST_DIR/Dockerfile.private"  # private Dockerfile not copied to public repo
+# Copy Pyproject and uv.lock for Python dependencies
+cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/pyproject.toml" "$DEST_DIR/pyproject.toml"
+cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/uv.lock" "$DEST_DIR/uv.lock"
 
-echo "✅ Dockerfiles have been copied to $DEST_DIR"
+
+# Copy and overwrite the Dockerfile.public
+cp -f "$SRC_DIR/Dockerfile.public" "$DEST_DIR/Dockerfile.public"
+
+echo "✅ Dockerfiles and related files have been copied to $DEST_DIR"
