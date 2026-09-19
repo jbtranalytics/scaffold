@@ -1,0 +1,31 @@
+# Dockerfile.public
+# Public base image containing all Python dependencies (via uv).
+# This image is intended to be published publicly (e.g. to ghcr.io) and can be used as the base for a private image that only adds your source code.
+
+FROM python:3.14-slim AS base
+
+# Install OS build tools required by many Python wheels (adjust as needed).
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        gcc \
+        libffi-dev \
+        libssl-dev \
+        ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install uv (the Python package manager)
+ENV UV_INSTALL_DIR=/usr/local
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
+    ln -s ${UV_INSTALL_DIR}/bin/uv /usr/local/bin/uv
+
+WORKDIR /app
+
+# Copy only the pyproject and lock files to leverage Docker layer caching.
+COPY pyproject.toml uv.lock ./
+
+# Install production dependencies (no dev groups) in a fully locked, reproducible manner.
+RUN uv sync --no-dev --frozen
+
+# The resulting image contains a ready‑to‑use Python environment with all required packages.
+# It does NOT contain any of your application source code – that will be added in the private image.

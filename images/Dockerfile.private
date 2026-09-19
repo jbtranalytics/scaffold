@@ -1,0 +1,20 @@
+# Dockerfile.private
+# Private image that layers your application code on top of the public base image.
+# It assumes the public base image has already been built and is available (e.g. ghcr.io/<owner>/my-public-image:latest).
+
+# The base image can be overridden at build time:
+ARG BASE_IMAGE=ghcr.io/<owner>/my-public-image:latest
+FROM ${BASE_IMAGE} AS base
+
+WORKDIR /app
+
+# Copy the application source code into the image.
+# Adjust the paths to include whatever you need at runtime.
+COPY . .
+
+# Optionally, you can install any runtime‑only dependencies here.
+# For example, if you have extra packages that are used only in production:
+# RUN uv sync --no-dev --frozen --only-prod
+
+# Define the default command (adjust to your actual entry point).
+CMD ["just", "api", "dev"]
