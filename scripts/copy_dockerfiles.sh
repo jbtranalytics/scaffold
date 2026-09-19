@@ -16,6 +16,6 @@ fi
 
 # Copy and overwrite the Dockerfiles.
 cp -f "$SRC_DIR/Dockerfile.public" "$DEST_DIR/Dockerfile.public"
-cp -f "$SRC_DIR/Dockerfile.private" "$DEST_DIR/Dockerfile.private"
+# cp -f "$SRC_DIR/Dockerfile.private" "$DEST_DIR/Dockerfile.private"  # private Dockerfile not copied to public repo
 
 echo "✅ Dockerfiles have been copied to $DEST_DIR"
