@@ -41,6 +41,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_26.x | bash - && \
 
 # Copy the package.json for the web app (used for npm install)
 COPY apps/web/package.json ./apps/web/package.json
+COPY apps/web/package-lock.json ./apps/web/package-lock.json
 
 # Install Node dependencies (including dev) using npm ci
 RUN npm ci --prefix apps/web
