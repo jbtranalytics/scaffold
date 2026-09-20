@@ -34,10 +34,9 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
 
 WORKDIR /app
 
-# Install Node.js 26 (via NodeSource)
-RUN curl -fsSL https://deb.nodesource.com/setup_26.x | bash - && \
-    apt-get install -y --no-install-recommends nodejs && \
-    rm -rf /var/lib/apt/lists/*
+# Install just (task runner) for development convenience
+RUN curl -LsSf https://github.com/casey/just/releases/download/1.28.0/just-1.28.0-x86_64-unknown-linux-musl.tar.gz \
+    | tar -xz -C /usr/local/bin just
 
 # Copy the package.json for the web app (used for npm install)
 COPY apps/web/package.json ./apps/web/package.json
