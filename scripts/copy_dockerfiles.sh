@@ -18,6 +18,7 @@ fi
 mkdir -p "$DEST_DIR/apps/web"
 # Copy package.json (public dependency manifest) – it will be used by the public Docker image to install node modules
 cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/../apps/web" && pwd)/package.json" "$DEST_DIR/apps/web/package.json"
+cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/../apps/web" && pwd)/package-lock.json" "$DEST_DIR/apps/web/package-lock.json"
 
 # Copy .gitignore (ignore rules) – ensures the public repo has the same ignore patterns
 cp -f "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/.gitignore" "$DEST_DIR/.gitignore"
