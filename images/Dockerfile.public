@@ -17,6 +17,7 @@ RUN apt-get update && \
         libffi-dev \
         libssl-dev \
         ca-certificates \
+        curl \
         # Version control tools – needed for git‑based Python deps
         git \
         openssh-client \
